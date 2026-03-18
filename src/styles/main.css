@@ -94,6 +94,8 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
   /* Ultra Responsive Typography */
   margin-bottom: 0.5em;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 h1 { font-size: clamp(2.5rem, 8vw, 5rem); }
@@ -1824,6 +1826,13 @@ h3 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
   animation: float 4s infinite ease-in-out;
 }
 
+/* --- Davy Jones Mobile Background Pan --- */
+@keyframes davyJonesMobilePan {
+  0% { background-position: 20% center; }
+  50% { background-position: 80% center; }
+  100% { background-position: 20% center; }
+}
+
 /* ============================================
    RESPONSIVE
    ============================================ */
@@ -1837,6 +1846,12 @@ h3 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
 }
 
 @media (max-width: 768px) {
+  body {
+    background-attachment: scroll; /* Better performance on mobile */
+    background-size: cover;
+    animation: davyJonesMobilePan 20s infinite linear;
+  }
+
   .header {
     padding: 15px 20px;
   }
@@ -1862,12 +1877,12 @@ h3 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
   }
 
   .strains-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 15px;
   }
 
   .merch-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 15px;
   }
 
@@ -1914,6 +1929,16 @@ h3 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
     max-width: 400px;
     margin: 20px auto 0;
   }
+
+  .country-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .country-flag-glow {
+    font-size: 5rem !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1926,10 +1951,14 @@ h3 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
   }
 
   .hero__strain-name {
-    font-size: 2rem;
+    font-size: 2.5rem; /* Slightly larger but safe with break-word */
   }
 
   .about-section h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
+  }
+
+  .country-page__hero h1 {
+    font-size: 2.5rem;
   }
 }
