@@ -44,10 +44,10 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  color: var(--color-text);
+  font-family: var(--font-body);
+  color: var(--color-white);
   line-height: 1.6;
-  background-color: var(--color-bg);
+  background-color: var(--color-black);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
@@ -89,11 +89,6 @@ img {
 
 .camo-gradient-strong {
   background: var(--color-black);
-}
-
-/* --- Animated Background --- */
-body::before {
-  display: none;
 }
 
 /* --- Typography --- */
