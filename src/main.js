@@ -7,23 +7,23 @@ import './styles/main.css';
 
 // --- Data ---
 const STRAINS = [
-  { id: 'kamikaze-candy', name: 'Kamikaze Candy', lineage: 'Kamikaze x Always Faded', type: 'flower', desc: 'The sweet side of destruction. Candy terps, Kamikaze power. "Always Faded" collab.', thc: '24-28%', image: '/src/assets/kamikaze-candy-jar.png' },
-  { id: 'white-kamikaze', name: 'White Kamikaze', lineage: 'Kamikaze Pheno', type: 'flower', desc: 'Crystal coated and lethal. The cleanest cut of the legend.', thc: '26-30%', image: '/src/assets/white-kamikaze-jars.png' },
-  { id: 'kookiez', name: 'Kookiez', lineage: 'Kamikaze x Thin Mint Cookies', type: 'flower', desc: 'Heavy GSC lean with a Zkittlez twist. Creamy, minty, unforgettable.', thc: '24-28%', image: '/src/assets/kookiez-jar.png' },
-  { id: 'kamikaze', name: 'Kamikaze', lineage: 'Zkittlez Cross', type: 'flower', desc: 'The flagship. Sharp flavor, bold aroma, smooth finish.', thc: '22-26%', image: '/src/assets/kamikaze-jar.png' },
-  { id: 'dog-food', name: 'Dog Food', lineage: 'Exclusive Cross', type: 'flower', desc: 'Raw, pungent, and heavy-hitting. For the real ones only.', thc: '25-29%', image: '/src/assets/headcrack-jar.png' },
-  { id: 'frog-food', name: 'Frog Food', lineage: 'Exclusive Pheno', type: 'flower', desc: 'Unique profile, sticky resin, pure potency.', thc: '23-27%', image: '/src/assets/jars-lineup.png' },
+  { id: 'kamikaze-candy', name: 'Kamikaze Candy', lineage: 'Kamikaze x Always Faded', type: 'flower', desc: 'The sweet side of destruction. Candy terps, Kamikaze power. "Always Faded" collab.', thc: '24-28%', image: '/assets/kamikaze-candy-jar.png' },
+  { id: 'white-kamikaze', name: 'White Kamikaze', lineage: 'Kamikaze Pheno', type: 'flower', desc: 'Crystal coated and lethal. The cleanest cut of the legend.', thc: '26-30%', image: '/assets/white-kamikaze-jars.png' },
+  { id: 'kookiez', name: 'Kookiez', lineage: 'Kamikaze x Thin Mint Cookies', type: 'flower', desc: 'Heavy GSC lean with a Zkittlez twist. Creamy, minty, unforgettable.', thc: '24-28%', image: '/assets/kookiez-jar.png' },
+  { id: 'kamikaze', name: 'Kamikaze', lineage: 'Zkittlez Cross', type: 'flower', desc: 'The flagship. Sharp flavor, bold aroma, smooth finish.', thc: '22-26%', image: '/assets/kamikaze-jar.png' },
+  { id: 'dog-food', name: 'Dog Food', lineage: 'Exclusive Cross', type: 'flower', desc: 'Raw, pungent, and heavy-hitting. For the real ones only.', thc: '25-29%', image: '/assets/headcrack-jar.png' },
+  { id: 'frog-food', name: 'Frog Food', lineage: 'Exclusive Pheno', type: 'flower', desc: 'Unique profile, sticky resin, pure potency.', thc: '23-27%', image: '/assets/jars-lineup.png' },
 ];
 
 const COUNTRIES = [
-  { id: 'usa', name: 'United States', code: 'US', status: 'Available', flag: '🇺🇸', desc: 'Born in NorCal, distributed across the Golden State and beyond. Living soil roots run deep in American soil.', image: '/src/assets/country-usa.jpg' },
-  { id: 'canada', name: 'Canada', code: 'CA', status: 'Available', flag: '🇨🇦', desc: 'From the redwoods to the Rockies. John Doe genetics cross the northern border with full force.', image: '/src/assets/country-canada.jpg' },
-  { id: 'thailand', name: 'Thailand', code: 'TH', status: 'Available', flag: '🇹🇭', desc: 'Southeast Asia meets NorCal craft. Kamikaze lands in the Land of Smiles.', image: '/src/assets/country-thailand.jpg' },
-  { id: 'france', name: 'France', code: 'FR', status: 'Available', flag: '🇫🇷', desc: 'Parisian nights meet NorCal craft. John Doe Genetics is now accessible across France.', image: '/src/assets/country-france.jpg' },
-  { id: 'germany', name: 'Germany', code: 'DE', status: 'Available', flag: '🇩🇪', desc: 'The Ghost Brand lands in the heart of Europe. Quality recognized by the connoisseurs of Berlin and beyond.', image: '/src/assets/country-germany.jpg' },
-  { id: 'italy', name: 'Italy', code: 'IT', status: 'Coming Soon', flag: '🇮🇹', desc: 'Mediterranean sun meets NorCal soil. The ghost brand is crossing the Alps.', image: '/src/assets/country-italy.jpg' },
-  { id: 'switzerland', name: 'Switzerland', code: 'CH', status: 'Coming Soon', flag: '🇨🇭', desc: 'Swiss precision meets living soil craft. Pure quality heading to the Alps.', image: '/src/assets/country-switzerland.jpg' },
-  { id: 'holland', name: 'Holland', code: 'NL', status: 'Coming Soon', flag: '🇳🇱', desc: 'The spiritual home of European cannabis welcomes the next generation of genetics.', image: '/src/assets/country-holland.jpg' },
+  { id: 'usa', name: 'United States', code: 'US', status: 'Available', flag: '🇺🇸', desc: 'Born in NorCal, distributed across the Golden State and beyond. Living soil roots run deep in American soil.', image: '/assets/country-usa.jpg' },
+  { id: 'canada', name: 'Canada', code: 'CA', status: 'Available', flag: '🇨🇦', desc: 'From the redwoods to the Rockies. John Doe genetics cross the northern border with full force.', image: '/assets/country-canada.jpg' },
+  { id: 'thailand', name: 'Thailand', code: 'TH', status: 'Available', flag: '🇹🇭', desc: 'Southeast Asia meets NorCal craft. Kamikaze lands in the Land of Smiles.', image: '/assets/country-thailand.jpg' },
+  { id: 'france', name: 'France', code: 'FR', status: 'Available', flag: '🇫🇷', desc: 'Parisian nights meet NorCal craft. John Doe Genetics is now accessible across France.', image: '/assets/country-france.jpg' },
+  { id: 'germany', name: 'Germany', code: 'DE', status: 'Available', flag: '🇩🇪', desc: 'The Ghost Brand lands in the heart of Europe. Quality recognized by the connoisseurs of Berlin and beyond.', image: '/assets/country-germany.jpg' },
+  { id: 'italy', name: 'Italy', code: 'IT', status: 'Coming Soon', flag: '🇮🇹', desc: 'Mediterranean sun meets NorCal soil. The ghost brand is crossing the Alps.', image: '/assets/country-italy.jpg' },
+  { id: 'switzerland', name: 'Switzerland', code: 'CH', status: 'Coming Soon', flag: '🇨🇭', desc: 'Swiss precision meets living soil craft. Pure quality heading to the Alps.', image: '/assets/country-switzerland.jpg' },
+  { id: 'holland', name: 'Holland', code: 'NL', status: 'Coming Soon', flag: '🇳🇱', desc: 'The spiritual home of European cannabis welcomes the next generation of genetics.', image: '/assets/country-holland.jpg' },
   { id: 'ireland', name: 'Ireland', code: 'IE', status: 'Coming Soon', flag: '🇮🇪', desc: 'The Emerald Isle welcomes the ghost brand. Quality recognizes quality.' },
   { id: 'uk', name: 'United Kingdom', code: 'UK', status: 'Coming Soon', flag: '🇬🇧', desc: 'London calling. John Doe answers. Premium genetics heading across the Atlantic.' },
   { id: 'spain', name: 'Spain', code: 'ES', status: 'Coming Soon', flag: '🇪🇸', desc: 'Mediterranean sun meets Humboldt soil craft. The ghost brand goes Iberian.' },
@@ -41,15 +41,15 @@ const MERCH_ITEMS = [
 ];
 
 const GALLERY_ITEMS = [
-  { title: 'The Lineup', image: '/src/assets/jars-lineup.png' },
-  { title: 'Kamikaze Candy Jar', image: '/src/assets/kamikaze-candy-jar.png' },
-  { title: 'Kookiez Box', image: '/src/assets/kookiez-box.png' },
-  { title: 'White Kamikaze', image: '/src/assets/white-kamikaze-jars.png' },
-  { title: 'Kamikaze Box', image: '/src/assets/kamikaze-box.png' },
-  { title: 'Always Faded Lid', image: '/src/assets/kamikaze-candy-lid.png' },
-  { title: 'Kamikaze Candy Pouch', image: '/src/assets/kamikaze-candy-pouch.png' },
-  { title: 'Kookiez Jar', image: '/src/assets/kookiez-jar.png' },
-  { title: 'Head Crack Candy', image: '/src/assets/headcrack-jar.png' },
+  { title: 'The Lineup', image: '/assets/jars-lineup.png' },
+  { title: 'Kamikaze Candy Jar', image: '/assets/kamikaze-candy-jar.png' },
+  { title: 'Kookiez Box', image: '/assets/kookiez-box.png' },
+  { title: 'White Kamikaze', image: '/assets/white-kamikaze-jars.png' },
+  { title: 'Kamikaze Box', image: '/assets/kamikaze-box.png' },
+  { title: 'Always Faded Lid', image: '/assets/kamikaze-candy-lid.png' },
+  { title: 'Kamikaze Candy Pouch', image: '/assets/kamikaze-candy-pouch.png' },
+  { title: 'Kookiez Jar', image: '/assets/kookiez-jar.png' },
+  { title: 'Head Crack Candy', image: '/assets/headcrack-jar.png' },
 ];
 
 // --- App State ---
@@ -143,9 +143,9 @@ function router() {
 // --- Page Renderers ---
 function renderHome() {
   const HERO_BGS = [
-    '/src/assets/hero-1.png',
-    '/src/assets/hero-2.png',
-    '/src/assets/hero-3.png'
+    '/assets/hero-1.png',
+    '/assets/hero-2.png',
+    '/assets/hero-3.png'
   ];
   return `
     <section class="hero hero--home">
@@ -171,14 +171,14 @@ function renderHome() {
       <div class="products-grid">
         <a href="#/flower" class="product-card">
           <div class="product-card__image-container">
-            <img src="/src/assets/kamikaze-box.png" alt="Flower Box">
+            <img src="/assets/kamikaze-box.png" alt="Flower Box">
           </div>
           <h3>FLOWER SHOWCASE</h3>
           <span class="product-card__link">VIEW CATALOGUE →</span>
         </a>
         <a href="#/merch" class="product-card">
           <div class="product-card__image-container">
-            <img src="/src/assets/merch-hero.png" alt="Merch" style="object-fit: cover; width: 100%; height: 100%;">
+            <img src="/assets/merch-hero.png" alt="Merch" style="object-fit: cover; width: 100%; height: 100%;">
           </div>
           <h3>OFFICIAL MERCH</h3>
           <span class="product-card__link">SHOP THE DROP →</span>
