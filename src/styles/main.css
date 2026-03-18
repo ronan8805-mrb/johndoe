@@ -627,10 +627,8 @@ h3 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
   height: 100%;
   opacity: 0;
   transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   text-align: center;
+  backdrop-filter: blur(3px); /* Glassmorphism/Ghost effect */
 }
 
 .hero__slide::after {
@@ -853,15 +851,15 @@ h3 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('https://images.unsplash.com/photo-1548120238-2d0a44417387?q=80&w=2670&auto=format&fit=crop');
+  background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2672&auto=format&fit=crop'); /* High-def digital earth */
   background-size: cover;
   background-position: center;
-  filter: grayscale(1) contrast(1.1) brightness(0.6) opacity(0.25);
+  filter: grayscale(1) contrast(1.3) brightness(0.8) opacity(0.6);
   transition: opacity 0.8s ease;
 }
 
-.world-map-container:hover .world-map-bg {
-  opacity: 0.4;
+.world-map-wrapper:hover .world-map-bg {
+  opacity: 0.8;
 }
 
 #world-map {

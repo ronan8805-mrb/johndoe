@@ -151,7 +151,7 @@ function renderHome() {
     <section class="hero hero--home">
       <div class="hero__slides">
         ${HERO_BGS.map((bg, i) => `
-          <div class="hero__slide ${i === 0 ? 'active' : ''}" data-slide="${i}" style="background-image: url('${bg}'); background-size: cover; background-position: center;">
+          <div class="hero__slide ${i === 0 ? 'active' : ''}" data-slide="${i}" style="background-image: url('${bg}'); background-size: cover; background-position: center; opacity: ${i === 0 ? '0.8' : '0'};">
             <div class="hero__slide-content">
               <!-- Text and emojis removed for ultra premium visual focus -->
             </div>
@@ -178,7 +178,7 @@ function renderHome() {
         </a>
         <a href="#/merch" class="product-card">
           <div class="product-card__image-container">
-            <img src="/src/assets/logo-white.png" alt="Logo" style="padding: 40px;">
+            <img src="/src/assets/merch-hero.png" alt="Merch" style="object-fit: cover; width: 100%; height: 100%;">
           </div>
           <h3>OFFICIAL MERCH</h3>
           <span class="product-card__link">SHOP THE DROP →</span>
