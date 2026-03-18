@@ -143,23 +143,17 @@ function router() {
 // --- Page Renderers ---
 function renderHome() {
   const HERO_BGS = [
-    '/src/assets/hero-kamikaze-candy.jpg',
-    '/src/assets/hero-white-kamikaze.jpg',
-    '/src/assets/hero-kookiez.jpg'
+    '/src/assets/hero-1.png',
+    '/src/assets/hero-2.png',
+    '/src/assets/hero-3.png'
   ];
   return `
     <section class="hero hero--home">
       <div class="hero__slides">
-        ${STRAINS.slice(0, 3).map((s, i) => `
-          <div class="hero__slide hero__slide--${s.id} ${i === 0 ? 'active' : ''}" data-slide="${i}">
+        ${HERO_BGS.map((bg, i) => `
+          <div class="hero__slide ${i === 0 ? 'active' : ''}" data-slide="${i}" style="background-image: url('${bg}'); background-size: cover; background-position: center;">
             <div class="hero__slide-content">
-              <h1 class="hero__strain-name">${s.name}</h1>
-              <p class="hero__strain-tagline">${s.desc.split('.')[0]}.</p>
-              <div class="hero__strain-icons">
-                 <span>🌱 Living Soil</span>
-                 <span>⚡ Ghost Brand</span>
-                 <span>🏔️ NorCal Origins</span>
-              </div>
+              <!-- Text and emojis removed for ultra premium visual focus -->
             </div>
           </div>
         `).join('')}
