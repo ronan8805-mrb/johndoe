@@ -151,7 +151,7 @@ function renderHome() {
     <section class="hero hero--home">
       <div class="hero__slides">
         ${HERO_BGS.map((bg, i) => `
-          <div class="hero__slide ${i === 0 ? 'active' : ''}" data-slide="${i}" style="background-image: url('${bg}'); background-size: cover; background-position: center; opacity: ${i === 0 ? '0.8' : '0'};">
+          <div class="hero__slide ${i === 0 ? 'active' : ''}" data-slide="${i}" style="background-image: url('${bg}'); background-size: cover; background-position: center;">
             <div class="hero__slide-content">
               <!-- Text and emojis removed for ultra premium visual focus -->
             </div>
