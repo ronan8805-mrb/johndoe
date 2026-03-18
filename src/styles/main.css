@@ -45,26 +45,15 @@ html {
 
 body {
   font-family: var(--font-body);
+  background-color: transparent;
   color: var(--color-white);
   line-height: 1.6;
-  background-color: var(--color-black);
   overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('/assets/davy-jones-bg.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('/assets/site-bg.png');
   background-size: cover;
-  background-position: center;
+  background-position: center center;
+  background-attachment: fixed;
   background-repeat: no-repeat;
-  pointer-events: none;
 }
 
 a {
@@ -91,6 +80,11 @@ img {
   background: var(--color-black);
 }
 
+/* --- Animated Background --- */
+body::before {
+  display: none;
+}
+
 /* --- Typography --- */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
@@ -98,15 +92,14 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   line-height: 1.1;
-  /* Ultra Responsive Typography */
+  /* Responsive Typography */
   margin-bottom: 0.5em;
-  word-break: break-word;
-  overflow-wrap: break-word;
+  /* Removed word-break to prevent unprofessional word splitting */
 }
 
-h1 { font-size: clamp(2.5rem, 8vw, 5rem); }
-h2 { font-size: clamp(2rem, 6vw, 3.5rem); }
-h3 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
+h1 { font-size: clamp(2rem, 7vw, 5rem); } /* Reduced mobile minimum from 2.5rem to 2rem */
+h2 { font-size: clamp(1.8rem, 5vw, 3.5rem); } /* Reduced mobile minimum */
+h3 { font-size: clamp(1.3rem, 4vw, 2.5rem); }
 
 .display-text {
   font-family: var(--font-display);
@@ -1852,8 +1845,27 @@ h3 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
 }
 
 @media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+    background-image: none !important; /* Hide original body background */
+    background-color: var(--color-black); /* Fallback */
+  }
+
+  /* Robust fixed background for mobile (prevents iOS Safari bugs) */
   body::before {
-    background-position: 75% center; /* Exact framing of Davy Jones on the right side */
+    content: '';
+    display: block !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('/assets/site-bg.png');
+    background-size: cover;
+    background-position: calc(0% + 15vw) 80%; /* Nudged right by 15vw to achieve exact 50/50 balance */
+    background-repeat: no-repeat;
+    z-index: -1;
+    pointer-events: none;
   }
 
   .hero {
@@ -1981,6 +1993,27 @@ h3 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
   }
 
   .country-page__hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+  }
+
+  /* Ensure page headers (like TRANSMISSION, CULTIVATION DIARIES) scale down properly to fit screen width */
+  .contact-page__inner h1,
+  .gallery-page h1,
+  .merch-page__header h1,
+  .strains-page__header h1,
+  .locator-page h1 {
+    font-size: 2rem;
+    letter-spacing: 0.05em; /* Slightly tighter letter spacing to help fit */
+  }
+}
+
+@media (max-width: 400px) {
+  /* Ultra small screens */
+  .contact-page__inner h1,
+  .gallery-page h1,
+  .merch-page__header h1,
+  .strains-page__header h1,
+  .locator-page h1 {
+    font-size: 1.65rem; 
   }
 }
