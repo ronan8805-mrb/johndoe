@@ -165,6 +165,30 @@ function renderHome() {
       </div>
     </section>
 
+    <section class="about-section animate-on-scroll">
+      <div class="section-badge">ABOUT</div>
+      <h2>JOHN DOE<span>SUPPLY CO.</span></h2>
+      <p>Ghost brand. Living soil. NorCal roots. Working silently to produce the highest tier of multi-award winning cannabis genetics. No identities, just pure unmatched quality that speaks from Humboldt to the world.</p>
+      <a href="#/about" class="btn btn--primary">OUR ETHOS</a>
+    </section>
+
+    <section class="world-section animate-on-scroll">
+      <div class="section-badge">GLOBAL</div>
+      <h2>INTERNATIONAL PRESENCE</h2>
+      <div class="country-carousel" id="country-carousel">
+        ${COUNTRIES.filter(c => c.image).map((c, i) => `
+          <a href="#/country/${c.id}" class="country-card ${i === 0 ? 'country-card--large' : 'country-card--small'}">
+            <div class="country-card__bg" style="background-image: url('${c.image}');"></div>
+            <div class="country-card__overlay">
+              <div class="country-card__code">${c.flag} ${c.code}</div>
+              <div class="country-card__name">${c.name}</div>
+              <div class="country-card__status">${c.status}</div>
+            </div>
+          </a>
+        `).join('')}
+      </div>
+    </section>
+
     <section class="products-section animate-on-scroll">
       <div class="section-badge">COLLECTION</div>
       <h2>FLOWER & MERCH</h2>
@@ -190,30 +214,6 @@ function renderHome() {
           <h3>LOCATE STOCKIST</h3>
           <span class="product-card__link">WORLDWIDE MAP →</span>
         </a>
-      </div>
-    </section>
-
-    <section class="about-section animate-on-scroll">
-      <div class="section-badge">ABOUT</div>
-      <h2>JOHN DOE<span>SUPPLY CO.</span></h2>
-      <p>Ghost brand. Living soil. NorCal roots. Working silently to produce the highest tier of multi-award winning cannabis genetics. No identities, just pure unmatched quality that speaks from Humboldt to the world.</p>
-      <a href="#/about" class="btn btn--primary">OUR ETHOS</a>
-    </section>
-
-    <section class="world-section animate-on-scroll">
-      <div class="section-badge">GLOBAL</div>
-      <h2>INTERNATIONAL PRESENCE</h2>
-      <div class="country-carousel" id="country-carousel">
-        ${COUNTRIES.filter(c => c.image).map((c, i) => `
-          <a href="#/country/${c.id}" class="country-card ${i === 0 ? 'country-card--large' : 'country-card--small'}">
-            <div class="country-card__bg" style="background-image: url('${c.image}');"></div>
-            <div class="country-card__overlay">
-              <div class="country-card__code">${c.flag} ${c.code}</div>
-              <div class="country-card__name">${c.name}</div>
-              <div class="country-card__status">${c.status}</div>
-            </div>
-          </a>
-        `).join('')}
       </div>
     </section>
   `;

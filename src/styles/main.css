@@ -44,16 +44,27 @@ html {
 }
 
 body {
-  font-family: var(--font-body);
-  background-color: transparent;
-  color: var(--color-white);
+  font-family: 'Inter', sans-serif;
+  color: var(--color-text);
   line-height: 1.6;
+  background-color: var(--color-bg);
   overflow-x: hidden;
-  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('/assets/site-bg.png');
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('/assets/davy-jones-bg.jpg');
   background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
+  background-position: center;
   background-repeat: no-repeat;
+  pointer-events: none;
 }
 
 a {
@@ -1846,10 +1857,26 @@ h3 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
 }
 
 @media (max-width: 768px) {
-  body {
-    background-attachment: scroll; /* Better performance on mobile */
-    background-size: cover;
-    animation: davyJonesMobilePan 20s infinite linear;
+  body::before {
+    background-position: 75% center; /* Exact framing of Davy Jones on the right side */
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 120px 20px 40px;
+    height: auto;
+    min-height: auto;
+  }
+
+  .hero__slides {
+    aspect-ratio: 16/9; /* Smaller aspect ratio */
+    width: 85%; /* Scaled down for quality */
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .hero__dots {
+    margin-top: 20px;
   }
 
   .header {
