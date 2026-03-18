@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>John Doe Supply Co. — Premium Living Soil Cannabis</title>
+  <meta name="description" content="John Doe Supply Co. — NorCal's underground legend. Premium living soil cannabis. Home of Kamikaze, Kookiez, and more. No Identity. Pure Quality." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles/main.css" />
+</head>
+<body>
+  <!-- Age Gate -->
+  <div id="age-gate" class="age-gate">
+    <div class="age-gate__overlay"></div>
+    <div class="age-gate__content">
+      <img src="/src/assets/logo-white.png" alt="John Doe Supply Co." class="age-gate__logo" />
+      <h2 class="age-gate__title">YOU MUST BE 21 OR OLDER TO ACCESS THIS WEBSITE</h2>
+      <p class="age-gate__subtitle">ARE YOU OVER 21 YEARS OF AGE?</p>
+      <div class="age-gate__buttons">
+        <button id="age-yes" class="btn btn--primary">YES</button>
+        <button id="age-no" class="btn btn--secondary">NO</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Email Signup Modal -->
+  <div id="signup-modal" class="modal" style="display:none;">
+    <div class="modal__overlay"></div>
+    <div class="modal__content">
+      <button id="modal-close" class="modal__close">&times;</button>
+      <img src="/src/assets/logo-white.png" alt="John Doe Supply Co." class="modal__logo" />
+      <h2 class="modal__title">JOIN THE CREW</h2>
+      <p class="modal__subtitle">BE THE FIRST TO KNOW ABOUT NEW DROPS AND EVENTS.</p>
+      <form class="modal__form" id="signup-form">
+        <input type="email" placeholder="Enter your email" required />
+        <input type="text" placeholder="Enter your zip code" />
+        <button type="submit" class="btn btn--primary btn--full">JOIN NOW</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header id="main-header" class="header">
+    <button id="nav-toggle" class="header__hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="#/" class="header__logo">
+      <img src="/src/assets/logo-transparent.png" alt="John Doe Supply Co." />
+    </a>
+  </header>
+
+  <!-- Mobile Nav Overlay -->
+  <nav id="main-nav" class="nav-overlay">
+    <button id="nav-close" class="nav-overlay__close">&times;</button>
+    <ul class="nav-overlay__links">
+      <li><span class="nav-num">01</span><a href="#/" data-nav>HOME</a></li>
+      <li class="nav-overlay__dropdown">
+        <span class="nav-num">02</span><a href="#/flower" data-nav>SHOP <span class="nav-arrow">▾</span></a>
+        <ul class="nav-overlay__sub">
+          <li><a href="#/flower" data-nav>Flower</a></li>
+          <li><a href="#/merch" data-nav>Merch</a></li>
+        </ul>
+      </li>
+      <li><span class="nav-num">03</span><a href="#/merch" data-nav>MERCH</a></li>
+      <li><span class="nav-num">04</span><a href="#/store-locator" data-nav>STORE LOCATOR</a></li>
+      <li><span class="nav-num">05</span><a href="#/about" data-nav>ABOUT US</a></li>
+      <li><span class="nav-num">06</span><a href="#/gallery" data-nav>GALLERY</a></li>
+      <li><span class="nav-num">07</span><a href="#/contact" data-nav>CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="app"></main>
+
+  <!-- Footer -->
+  <footer id="main-footer" class="footer">
+    <div class="footer__inner">
+      <div class="footer__links">
+        <h4>QUICK LINKS</h4>
+        <ul>
+          <li><span>01</span><a href="#/about">ABOUT US</a></li>
+          <li><span>02</span><a href="#/flower">SHOP</a></li>
+          <li><span>03</span><a href="#/contact">CONTACT</a></li>
+          <li><span>04</span><a href="#/store-locator">STORE LOCATOR</a></li>
+        </ul>
+      </div>
+      <div class="footer__contact">
+        <h4>CONTACT</h4>
+        <p>📍 NorCal, California, USA</p>
+        <p>✉️ info@johndoesupply.co</p>
+        <p>📸 @johndoesupplyco</p>
+        <div class="footer__subscribe">
+          <input type="email" placeholder="Enter your email" />
+          <button class="btn btn--primary">SUBSCRIBE</button>
+        </div>
+        <p class="footer__privacy">By subscribing you agree to our <a href="#">Privacy Policy</a></p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 John Doe Supply Co. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
