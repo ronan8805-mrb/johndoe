@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quality Control Verification | John Doe Supply Co.</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0a;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .container {
+    max-width: 520px;
+    width: 100%;
+    text-align: center;
+  }
+  .logo {
+    margin-bottom: 30px;
+  }
+  .logo img {
+    max-width: 180px;
+    height: auto;
+  }
+  .badge {
+    background: #cc0000;
+    color: #fff;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 3px;
+    padding: 8px 20px;
+    display: inline-block;
+    margin-bottom: 25px;
+  }
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 8vw, 52px);
+    letter-spacing: 2px;
+    line-height: 1;
+    margin-bottom: 15px;
+  }
+  .check {
+    font-size: 64px;
+    color: #22c55e;
+    margin: 20px 0;
+  }
+  .status {
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    color: #22c55e;
+  }
+  .details {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 8px;
+    padding: 25px 20px;
+    margin: 25px 0;
+    text-align: left;
+  }
+  .details .row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #222;
+    font-size: 15px;
+  }
+  .details .row:last-child {
+    border-bottom: none;
+  }
+  .details .label {
+    color: #888;
+    letter-spacing: 1px;
+  }
+  .details .value {
+    font-weight: 500;
+    text-align: right;
+  }
+  .note {
+    font-size: 14px;
+    color: #999;
+    line-height: 1.6;
+    margin: 25px 0;
+  }
+  .footer {
+    margin-top: 40px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #555;
+  }
+  .ca-seal {
+    display: inline-block;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-top: 15px;
+    color: #aaa;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="https://www.johndoesupplyco.com/logo.jpg" alt="John Doe Supply Co." onerror="this.style.display='none'">
+    </div>
+    <div class="badge">QUALITY CONTROL VERIFICATION</div>
+    <div class="check">✓</div>
+    <h1>APPROVED</h1>
+    <div class="status">QUALITY CONTROL PASSED</div>
+
+    <div class="details">
+      <div class="row">
+        <span class="label">VERIFIED BY</span>
+        <span class="value">John Doe Supply Co.</span>
+      </div>
+      <div class="row">
+        <span class="label">LOCATION</span>
+        <span class="value">California, USA</span>
+      </div>
+      <div class="row">
+        <span class="label">STATUS</span>
+        <span class="value">Approved</span>
+      </div>
+      <div class="row">
+        <span class="label">CHECK DATE</span>
+        <span class="value" id="check-date">—</span>
+      </div>
+    </div>
+
+    <p class="note">
+      This product has passed quality control inspection by John Doe Supply Co. in California, United States of America. Scanning this QR code confirms authenticity and that the product meets our standards.
+    </p>
+
+    <div class="ca-seal">CALIFORNIA • UNITED STATES</div>
+
+    <div class="footer">
+      JOHN DOE SUPPLY CO. • QUALITY CONTROL
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('check-date').textContent = new Date().toLocaleDateString('en-US', {
+      year: 'numeric', month: 'long', day: 'numeric'
+    });
+  </script>
+</body>
+</html>
