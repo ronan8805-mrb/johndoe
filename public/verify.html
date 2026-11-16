@@ -16,97 +16,107 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 30px 20px;
   }
   .container {
-    max-width: 520px;
+    max-width: 480px;
     width: 100%;
     text-align: center;
   }
   .logo {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
   }
   .logo img {
-    max-width: 180px;
+    max-width: 200px;
     height: auto;
   }
   .badge {
     background: #cc0000;
     color: #fff;
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: 3px;
-    padding: 8px 20px;
+    padding: 6px 16px;
     display: inline-block;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+  }
+  .check {
+    font-size: 56px;
+    color: #22c55e;
+    margin: 10px 0;
   }
   h1 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(36px, 8vw, 52px);
+    font-size: clamp(40px, 9vw, 56px);
     letter-spacing: 2px;
-    line-height: 1;
-    margin-bottom: 15px;
-  }
-  .check {
-    font-size: 64px;
-    color: #22c55e;
-    margin: 20px 0;
+    line-height: 0.95;
+    margin-bottom: 8px;
   }
   .status {
-    font-size: 22px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    margin-bottom: 30px;
+    font-size: 16px;
+    letter-spacing: 2px;
     color: #22c55e;
+    margin-bottom: 30px;
+    font-weight: 500;
   }
   .details {
     background: #111;
     border: 1px solid #222;
-    border-radius: 8px;
-    padding: 25px 20px;
-    margin: 25px 0;
+    border-radius: 6px;
+    padding: 8px 0;
+    margin: 20px 0;
     text-align: left;
   }
   .details .row {
     display: flex;
     justify-content: space-between;
-    padding: 12px 0;
-    border-bottom: 1px solid #222;
-    font-size: 15px;
+    align-items: center;
+    padding: 14px 20px;
+    border-bottom: 1px solid #1a1a1a;
+    font-size: 14px;
   }
   .details .row:last-child {
     border-bottom: none;
   }
   .details .label {
-    color: #888;
+    color: #777;
     letter-spacing: 1px;
+    font-size: 12px;
   }
   .details .value {
     font-weight: 500;
     text-align: right;
+    letter-spacing: 0.5px;
+  }
+  .batch {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #fff;
   }
   .note {
-    font-size: 14px;
-    color: #999;
-    line-height: 1.6;
-    margin: 25px 0;
+    font-size: 13px;
+    color: #888;
+    line-height: 1.7;
+    margin: 25px 0 15px;
+    padding: 0 10px;
+  }
+  .seal {
+    display: inline-block;
+    background: #111;
+    border: 1px solid #333;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #aaa;
+    margin-top: 10px;
   }
   .footer {
-    margin-top: 40px;
-    font-size: 12px;
+    margin-top: 35px;
+    font-size: 11px;
     letter-spacing: 2px;
-    color: #555;
-  }
-  .ca-seal {
-    display: inline-block;
-    background: #1a1a1a;
-    border: 1px solid #333;
-    padding: 6px 14px;
-    border-radius: 4px;
-    font-size: 12px;
-    letter-spacing: 1px;
-    margin-top: 15px;
-    color: #aaa;
+    color: #444;
   }
 </style>
 </head>
@@ -121,6 +131,10 @@
     <div class="status">QUALITY CONTROL PASSED</div>
 
     <div class="details">
+      <div class="row">
+        <span class="label">BATCH NUMBER</span>
+        <span class="value batch" id="batch">JD-QC-2026-001</span>
+      </div>
       <div class="row">
         <span class="label">VERIFIED BY</span>
         <span class="value">John Doe Supply Co.</span>
@@ -137,13 +151,17 @@
         <span class="label">CHECK DATE</span>
         <span class="value" id="check-date">—</span>
       </div>
+      <div class="row">
+        <span class="label">PRODUCT TYPE</span>
+        <span class="value">Cannabis</span>
+      </div>
     </div>
 
     <p class="note">
       This product has passed quality control inspection by John Doe Supply Co. in California, United States of America. Scanning this QR code confirms authenticity and that the product meets our standards.
     </p>
 
-    <div class="ca-seal">CALIFORNIA • UNITED STATES</div>
+    <div class="seal">CALIFORNIA • UNITED STATES</div>
 
     <div class="footer">
       JOHN DOE SUPPLY CO. • QUALITY CONTROL
@@ -154,6 +172,10 @@
     document.getElementById('check-date').textContent = new Date().toLocaleDateString('en-US', {
       year: 'numeric', month: 'long', day: 'numeric'
     });
+    // Generate a simple batch number based on date if needed
+    const d = new Date();
+    const batch = 'JD-QC-' + d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + String(d.getDate()).padStart(2,'0');
+    document.getElementById('batch').textContent = batch;
   </script>
 </body>
 </html>
